@@ -1,9 +1,11 @@
-import '../styles/globals.css';
 import type { AppProps } from 'next/app';
 import { useRouter } from 'next/router';
 import { ReactNode, useMemo, ReactElement } from 'react';
 import { CssBaseline } from '@mui/material';
 import type { NextPage } from 'next';
+
+import '../styles/tw-preflight.css';
+import '../styles/globals.css';
 
 import Layout from 'components/Layout/Layout';
 
