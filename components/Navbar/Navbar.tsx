@@ -6,8 +6,8 @@ import KamiLogo from '../../public/images/kami-nav-logo.svg';
 
 const Navbar = () => {
   return (
-    <Box component="header">
-      <AppBar className="bg-kami-white static">
+    <Box component="header" className="fixed z-[1201]">
+      <AppBar className="bg-kami-white ">
         <Toolbar>
           <Box sx={{ flexGrow: 1 }}>
             <Link href="/dashboard">

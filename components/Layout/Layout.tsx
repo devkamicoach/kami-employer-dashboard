@@ -1,4 +1,5 @@
 import Navbar from 'components/Navbar/Navbar';
+import Sidebar from 'components/Sidebar/Sidebar';
 import { FunctionComponent, ReactNode } from 'react';
 
 type LayoutTypes = {
@@ -10,6 +11,7 @@ const Layout: FunctionComponent<LayoutTypes> = ({ hideNavigation, children }) =>
   return (
     <>
       {!hideNavigation && <Navbar />}
+      <Sidebar />
       <main>{children}</main>
     </>
   );
