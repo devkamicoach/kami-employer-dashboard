@@ -8,6 +8,10 @@ module.exports = {
         'kami-white': '#FAF8F6',
         'kami-blue': '#284F73',
       },
+      fontFamily: {
+        heading: 'Moret, serif',
+        body: 'Graphik, sans-serif',
+      },
     },
   },
   plugins: [],

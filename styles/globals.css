@@ -2,12 +2,120 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  @font-face {
+    font-family: 'Moret';
+    src: url('/fonts/moret-bold-webfont.woff2') format('woff2'), url('/fonts/moret-bold-webfont.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Moret';
+    src: url('/fonts/moret-boldoblique-webfont.woff2') format('woff2'),
+      url('/fonts/moret-boldoblique-webfont.woff') format('woff');
+    font-weight: 700;
+    font-style: oblique;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Moret Book';
+    src: url('/fonts/moret-book-webfont.woff2') format('woff2'), url('/fonts/moret-book-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Moret Book';
+    src: url('/fonts/moret-bookoblique-webfont.woff2') format('woff2'),
+      url('/fonts/moret-bookoblique-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: oblique;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Moret';
+    src: url('/fonts/moret-extrabold-webfont.woff2') format('woff2'),
+      url('/fonts/moret-extrabold-webfont.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Moret';
+    src: url('/fonts/moret-extraboldoblique-webfont.woff2') format('woff2'),
+      url('/fonts/moret-extraboldoblique-webfont.woff') format('woff');
+    font-weight: 900;
+    font-style: oblique;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Moret';
+    src: url('/fonts/moret-regular-webfont.woff2') format('woff2'),
+      url('/fonts/moret-regular-webfont.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Moret';
+    src: url('/fonts/moret-regularoblique-webfont.woff2') format('woff2'),
+      url('/fonts/moret-regularoblique-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: oblique;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Moret';
+    src: url('/fonts/moret-semibold-webfont.woff2') format('woff2'),
+      url('/fonts/moret-semibold-webfont.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Moret';
+    src: url('/fonts/moret-semiboldoblique-webfont.woff2') format('woff2'),
+      url('/fonts/moret-semiboldoblique-webfont.woff') format('woff');
+    font-weight: 700;
+    font-style: oblique;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Graphik';
+    src: url('/fonts/graphik-500-medium-webfont.woff2') format('woff2'),
+      url('/fonts/graphik-500-medium-webfont.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Graphik';
+    src: url('/fonts/graphik-regular-webfont.woff2') format('woff2'),
+      url('/fonts/graphik-regular-webfont.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
-    Helvetica Neue, sans-serif;
+  /* font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
+    Helvetica Neue, sans-serif; */
 }
 
 a {
@@ -17,4 +125,18 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: theme(fontFamily.heading);
+}
+
+p,
+a {
+  font-family: theme(fontFamily.body);
 }

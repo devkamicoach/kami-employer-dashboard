@@ -1,0 +1,14 @@
+@font-face {
+  font-family: 'MoretRegular';
+  src: url('../public/fonts/Moret-Regular.otf');
+}
+
+@font-face {
+  font-family: 'MoretBold';
+  src: url('../public/fonts/Moret-Bold.otf');
+}
+
+@font-face {
+  font-family: 'GraphikRegular';
+  src: url('../public/fonts/Graphik-Regular.otf');
+}
