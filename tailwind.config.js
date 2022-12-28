@@ -7,6 +7,7 @@ module.exports = {
         'kami-green': '#66C5BF',
         'kami-white': '#FAF8F6',
         'kami-blue': '#284F73',
+        'kami-gray': '#666665',
       },
       fontFamily: {
         heading: 'Moret, serif',
