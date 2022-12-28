@@ -63,29 +63,27 @@ const Sidebar = () => {
         },
       }}
     >
-      <Box>
-        <Box className="flex gap-1 items-center">
-          <Box className="w-7 h-7 bg-slate-900 rounded-full"></Box>
-          <Typography component="h3">Optimum Health</Typography>
-        </Box>
-        <List>
-          {navItems.map(({ name, link, icon }) => {
-            const active = router.pathname === link;
-            return (
-              <Link key={name} href={link}>
-                <a>
-                  <ListItem className={cn('items-center', active ? 'bg-gray-200' : '')}>
-                    <ListItemIcon className={cn('min-w-[30px]', active ? 'text-kami-blue' : '')}>
-                      {createElement(icon, { fill: active ? '#284F73' : undefined })}
-                    </ListItemIcon>
-                    <Typography className={cn(active ? 'text-kami-blue' : '')}>{name}</Typography>
-                  </ListItem>
-                </a>
-              </Link>
-            );
-          })}
-        </List>
+      <Box className="flex gap-1 items-center">
+        <Box className="w-7 h-7 bg-slate-900 rounded-full"></Box>
+        <Typography component="h3">Optimum Health</Typography>
       </Box>
+      <List>
+        {navItems.map(({ name, link, icon }) => {
+          const active = router.pathname === link;
+          return (
+            <Link key={name} href={link}>
+              <a>
+                <ListItem className={cn('items-center', active ? 'bg-gray-200' : '')}>
+                  <ListItemIcon className={cn('min-w-[30px]', active ? 'text-kami-blue' : '')}>
+                    {createElement(icon, { fill: active ? '#284F73' : undefined })}
+                  </ListItemIcon>
+                  <Typography className={cn(active ? 'text-kami-blue' : '')}>{name}</Typography>
+                </ListItem>
+              </a>
+            </Link>
+          );
+        })}
+      </List>
     </Drawer>
   );
 };
