@@ -3,6 +3,10 @@ import Heading from 'components/Dashboard/Heading';
 import Messages from 'components/Dashboard/Messages';
 
 import { Button } from '@mui/material';
+import TopTopics from 'components/TopTopics/TopTopics';
+import MentalWellness from 'components/Icons/Topics/MentalWellness';
+import Sleep from 'components/Icons/Topics/Sleep';
+import Wellbeing from 'components/Icons/Topics/Wellbeing';
 
 const Dashboard = () => {
   const messages = [
@@ -23,13 +27,32 @@ const Dashboard = () => {
       ),
     },
   ];
+
+  const topics = [
+    {
+      icon: <MentalWellness width={25} height={25} />,
+      title: 'Mental Wellness',
+      impressions: '3,230',
+    },
+    {
+      icon: <Sleep width={25} height={25} />,
+      title: 'Sleep',
+      impressions: '2,710',
+    },
+    {
+      icon: <Wellbeing width={25} height={25} />,
+      title: 'Well-being',
+      impressions: '1,100',
+    },
+  ];
+
   return (
     <DashboardLayout
       heading={<Heading company="Optimum Health, LTD" user="Erika" />}
       messages={<Messages messages={messages} />}
+      topics={<TopTopics topics={topics} />}
       programmes={<div>programmes</div>}
       report={<div>report</div>}
-      topics={<div>topics</div>}
     />
   );
 };

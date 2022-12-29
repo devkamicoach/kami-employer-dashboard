@@ -2,11 +2,11 @@ import { Drawer, Typography, Box, List, ListItem, ListItemIcon } from '@mui/mate
 
 import { createElement, FunctionComponent, SVGAttributes } from 'react';
 
-import Home from '../Icons/Home';
-import Modules from 'components/Icons/Modules';
-import Insights from '../Icons/Insights';
-import Users from '../Icons/Users';
-import Support from '../Icons/Support';
+import Home from 'components/Icons/Nav/Home';
+import Modules from 'components/Icons/Nav/Modules';
+import Insights from 'components/Icons/Nav/Insights';
+import Users from 'components/Icons/Nav/Users';
+import Support from 'components/Icons/Nav/Support';
 
 import Link from 'next/link';
 import { useRouter } from 'next/router';

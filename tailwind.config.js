@@ -17,6 +17,7 @@ module.exports = {
         'kami-white': '#FAF8F6',
         'kami-blue': '#284F73',
         'kami-gray': '#666665',
+        'kami-text': '#403F3F',
         gray: {
           DEFAULT: '#5B5B66',
           dark: '#494847',
