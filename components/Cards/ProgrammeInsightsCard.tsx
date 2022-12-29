@@ -9,17 +9,17 @@ const ProgrammeInsightsCard: FunctionComponent<ProgrammeInsightCardTypes> = ({ t
     <Card className="max-w-[450px]">
       <CardContent>
         <Box className="flex items-center gap-4">
-          <Box>
+          <Box className="basis-3/4">
             <Typography component="h3" className="font-body font-bold text-xl">
               {title}
             </Typography>
-            <Box className="flex gap-4 mt-5">
+            <Box className="flex flex-wrap gap-4 mt-5">
               {topics.map((topic, index) => (
                 <Chip key={index} title={topic} />
               ))}
             </Box>
           </Box>
-          <Box>
+          <Box className="basis-1/4">
             <CircularProgressWithLabel value={rate} />
             <Typography className="text-xs">Completion Rate</Typography>
           </Box>

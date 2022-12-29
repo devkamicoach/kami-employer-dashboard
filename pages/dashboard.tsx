@@ -2,13 +2,15 @@ import DashboardLayout from 'components/Dashboard/DashboardLayout';
 import Heading from 'components/Dashboard/Heading';
 import Messages from 'components/Dashboard/Messages';
 
-import { Button } from '@mui/material';
+import { Box, Button, TextField, Typography } from '@mui/material';
 import TopTopics from 'components/TopTopics/TopTopics';
 import MentalWellness from 'components/Icons/Topics/MentalWellness';
 import Sleep from 'components/Icons/Topics/Sleep';
 import Wellbeing from 'components/Icons/Topics/Wellbeing';
 import QuickReport from 'components/Dashboard/QuickReport';
 import PopularProgrammes from 'components/Dashboard/PopularProgrammes';
+import PopupSidebar from 'components/Sidebar/PopupSidebar';
+import CheckboxCard from 'components/Cards/CheckboxCard';
 
 const Dashboard = () => {
   const messages = [
@@ -84,14 +86,65 @@ const Dashboard = () => {
     },
   ];
 
+  const checkList = [
+    {
+      title: 'Log in to Kami',
+      description:
+        "You've logged in, so you've automatically crossed out this item on your checklist. Welcome to Kami, we're happy to have you.",
+      checked: true,
+    },
+    {
+      title: 'Join our wellbeing webinar',
+      description: 'Part of our partnership are wellbeing webinars that focus on the core modules of your organiation.',
+      checked: true,
+    },
+    {
+      title: 'Provide login credentials to your users',
+      description:
+        'You have 50 seats allocated for users in your organization. You can manage these seats and created accounts on your Users Management page.',
+      actions: (
+        <Button variant="contained" className="bg-kami-green rounded-full w-full">
+          Go to Users Management Page
+        </Button>
+      ),
+    },
+    {
+      title: 'Sign up for our Kami Newsletter',
+      description: 'Be the first to hear about new content, module, partnerships, or product updates from Kami.',
+      actions: (
+        <Box className="flex w-full gap-2">
+          <TextField id="outlined-basic" label="Input your email here!" className="basis-3/4" variant="outlined" />
+          <Button variant="contained" className="bg-kami-green basis-1/4">
+            Send
+          </Button>
+        </Box>
+      ),
+    },
+  ];
+
   return (
-    <DashboardLayout
-      heading={<Heading company="Optimum Health, LTD" user="Erika" />}
-      messages={<Messages messages={messages} />}
-      topics={<TopTopics topics={topics} />}
-      report={<QuickReport reports={reports} />}
-      programmes={<PopularProgrammes insights={insights} />}
-    />
+    <Box className="flex">
+      <DashboardLayout
+        heading={<Heading company="Optimum Health, LTD" user="Erika" />}
+        messages={<Messages messages={messages} />}
+        topics={<TopTopics topics={topics} />}
+        report={<QuickReport reports={reports} />}
+        programmes={<PopularProgrammes insights={insights} />}
+      />
+      <PopupSidebar
+        heading="Onboarding Checklist"
+        content={
+          <Box className="flex flex-col gap-4">
+            <Typography component="p" className="text-sm">
+              2 out of 4 items completed
+            </Typography>
+            {checkList.map(({ title, description, checked, actions }, index) => (
+              <CheckboxCard key={index} title={title} description={description} checked={checked} actions={actions} />
+            ))}
+          </Box>
+        }
+      />
+    </Box>
   );
 };
 

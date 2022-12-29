@@ -16,7 +16,7 @@ const PopularProgrammes: FunctionComponent<ProgrammeInsightsTypes> = ({ insights
       <Grid container className="gap-2">
         {insights.map(({ title, topics, rate }, index) => {
           return (
-            <Grid key={index} md={4} item>
+            <Grid key={index} sm={12} xl={5} item>
               <ProgrammeInsightsCard title={title} topics={topics} rate={rate} />
             </Grid>
           );
