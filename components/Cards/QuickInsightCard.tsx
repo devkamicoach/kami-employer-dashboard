@@ -7,10 +7,10 @@ const QuickInsightCard: FunctionComponent<QuickInsightCardTypes> = ({ title, val
     <Card className="max-w-[230px]">
       <CardContent>
         <Box className="flex flex-col items-center gap-4">
-          <Typography component="h3" className="font-body font-bold text-xl">
+          <Typography component="h3" className="font-body font-bold text-xl text-center">
             {title}
           </Typography>
-          <Typography component="h3" className="font-body font-bold text-kami-blue text-5xl">
+          <Typography component="h3" className="font-body font-bold text-kami-blue text-4xl xl:text-5xl">
             {value}
           </Typography>
           <Typography component="h3" className="font-body text-[#7BD673] font-bold">
