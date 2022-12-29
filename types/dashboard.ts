@@ -11,3 +11,9 @@ export type QuickInsightCardTypes = {
   value: string;
   percentage: string;
 };
+
+export type ProgrammeInsightCardTypes = {
+  title: string;
+  topics: Array<string>;
+  rate: number;
+};

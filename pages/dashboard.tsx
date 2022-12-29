@@ -8,6 +8,7 @@ import MentalWellness from 'components/Icons/Topics/MentalWellness';
 import Sleep from 'components/Icons/Topics/Sleep';
 import Wellbeing from 'components/Icons/Topics/Wellbeing';
 import QuickReport from 'components/Dashboard/QuickReport';
+import PopularProgrammes from 'components/Dashboard/PopularProgrammes';
 
 const Dashboard = () => {
   const messages = [
@@ -70,13 +71,26 @@ const Dashboard = () => {
     },
   ];
 
+  const insights = [
+    {
+      title: 'Managing your Mental Health as a Parent',
+      topics: ['Parenting', 'Mental Wellbeing'],
+      rate: 50,
+    },
+    {
+      title: 'Maintaining Your Relationships',
+      topics: ['Family', 'Work-Life', 'Relationships'],
+      rate: 67,
+    },
+  ];
+
   return (
     <DashboardLayout
       heading={<Heading company="Optimum Health, LTD" user="Erika" />}
       messages={<Messages messages={messages} />}
       topics={<TopTopics topics={topics} />}
       report={<QuickReport reports={reports} />}
-      programmes={<div>programmes</div>}
+      programmes={<PopularProgrammes insights={insights} />}
     />
   );
 };
