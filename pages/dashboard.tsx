@@ -7,6 +7,7 @@ import TopTopics from 'components/TopTopics/TopTopics';
 import MentalWellness from 'components/Icons/Topics/MentalWellness';
 import Sleep from 'components/Icons/Topics/Sleep';
 import Wellbeing from 'components/Icons/Topics/Wellbeing';
+import QuickReport from 'components/Dashboard/QuickReport';
 
 const Dashboard = () => {
   const messages = [
@@ -46,13 +47,36 @@ const Dashboard = () => {
     },
   ];
 
+  const reports = [
+    {
+      title: 'User Sessions',
+      value: '4.5k',
+      percentage: '33.45%',
+    },
+    {
+      title: 'Avg. Sessions',
+      value: '04:23',
+      percentage: '3.15%',
+    },
+    {
+      title: 'User Sessions',
+      value: '4.5k',
+      percentage: '33.45%',
+    },
+    {
+      title: 'Avg. Sessions',
+      value: '04:23',
+      percentage: '3.15%',
+    },
+  ];
+
   return (
     <DashboardLayout
       heading={<Heading company="Optimum Health, LTD" user="Erika" />}
       messages={<Messages messages={messages} />}
       topics={<TopTopics topics={topics} />}
+      report={<QuickReport reports={reports} />}
       programmes={<div>programmes</div>}
-      report={<div>report</div>}
     />
   );
 };

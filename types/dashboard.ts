@@ -5,3 +5,9 @@ export type TopicTypes = {
   title: string;
   impressions: string;
 };
+
+export type QuickInsightCardTypes = {
+  title: string;
+  value: string;
+  percentage: string;
+};
