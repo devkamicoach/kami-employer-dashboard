@@ -6,7 +6,7 @@ import type { ModuleCardTypes } from 'types/modules';
 
 const ModuleCard: FunctionComponent<ModuleCardTypes> = ({ title, icon, isTop = false }) => {
   return (
-    <Card className="max-w-[175px]  h-full">
+    <Card className="max-w-[175px] h-full">
       <CardContent className="flex flex-col items-center gap-2">
         <Box width={80} height={80} className="bg-gray-100 flex justify-center items-center rounded-full relative">
           <Image src={icon} alt="Icon" width={40} height={40} />

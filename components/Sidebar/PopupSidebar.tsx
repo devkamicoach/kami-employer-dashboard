@@ -5,13 +5,15 @@ type PopupSidebarTypes = {
   heading: string;
   subheading?: string | undefined;
   content: ReactNode;
+  open?: boolean;
 };
 
-const PopupSidebar: FunctionComponent<PopupSidebarTypes> = ({ heading, subheading, content }) => {
+const PopupSidebar: FunctionComponent<PopupSidebarTypes> = ({ heading, subheading, content, open }) => {
   return (
     <Drawer
-      variant="permanent"
+      variant="persistent"
       anchor="right"
+      open={open}
       sx={{
         width: 400,
         flexShrink: 0,

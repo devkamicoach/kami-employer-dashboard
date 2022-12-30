@@ -32,6 +32,7 @@ const Dashboard = () => {
             ))}
           </Box>
         }
+        open={true}
       />
     </Box>
   );
