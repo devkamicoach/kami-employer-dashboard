@@ -4,16 +4,10 @@ import ModuleList from 'components/Modules/ModuleList';
 import PopupSidebar from 'components/Sidebar/PopupSidebar';
 import { FunctionComponent } from 'react';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import type { ModuleSideBarContentTypes } from 'types/modules';
+import { useModule } from 'context/ModuleContext';
 
 const ICON_PATH = '/images/topic-logos';
-
-type ModuleSideBarContentTypes = {
-  title: string;
-  description: string;
-  testimonial: string;
-  price: string;
-  details: Array<string>;
-};
 
 const ModuleSideBarContent: FunctionComponent<ModuleSideBarContentTypes> = ({
   title,
@@ -24,7 +18,9 @@ const ModuleSideBarContent: FunctionComponent<ModuleSideBarContentTypes> = ({
 }) => {
   return (
     <Box className="flex flex-col gap-5">
-      <Typography component="p">{description}</Typography>
+      <Typography component="p" className="text-sm">
+        {description}
+      </Typography>
       <Box className="bg-[#E7E7E7] p-5 rounded-md ">{testimonial}</Box>
       <Box className="bg-[#E7E7E7] p-5 rounded-md">
         <Typography>{title}</Typography>
@@ -32,7 +28,7 @@ const ModuleSideBarContent: FunctionComponent<ModuleSideBarContentTypes> = ({
           {price}
         </Typography>
         <List>
-          {details.map((detail, index) => (
+          {details?.map((detail, index) => (
             <ListItem disablePadding key={index}>
               <ListItemIcon className="min-w-[30px]">
                 <CheckCircleIcon className="text-[#8DC380]" fontSize="small" />
@@ -59,9 +55,7 @@ const ModuleSideBarContent: FunctionComponent<ModuleSideBarContentTypes> = ({
 
 const Modules = () => {
   const { currentModules, recommendedModules } = getModules();
-  const { description, details, price, testimonial } = getSideBarContent();
-  // const [open, setOpen] = useState(true);
-
+  const content = useModule();
   return (
     <>
       <ModuleLayout
@@ -75,18 +69,18 @@ const Modules = () => {
         }
       />
       <PopupSidebar
-        heading="Menopause or Manopause"
+        heading={content?.title}
         subheading="NEWEST MODULE"
         content={
           <ModuleSideBarContent
-            title="Menopause"
-            description={description}
-            details={details}
-            price={price}
-            testimonial={testimonial}
+            title={content?.title}
+            description={content?.description}
+            details={content?.details}
+            price={content?.price}
+            testimonial={content?.testimonial}
           />
         }
-        open={true}
+        open={content?.open}
       />
     </>
   );
@@ -117,28 +111,34 @@ function getModules() {
       title: 'Mental Wellness',
       icon: `${ICON_PATH}/mental-wellness.svg`,
       isTop: true,
+      content: getSideBarContent(),
     },
     {
       title: 'Sleep',
       icon: `${ICON_PATH}/sleep.svg`,
       isTop: true,
+      content: getSideBarContent(),
     },
     {
       title: 'Family Planning',
       icon: `${ICON_PATH}/family-planning.svg`,
       isTop: true,
+      content: getSideBarContent(),
     },
     {
       title: 'Birth',
       icon: `${ICON_PATH}/birth.svg`,
+      content: getSideBarContent(),
     },
     {
       title: 'Well-being',
       icon: `${ICON_PATH}/well-being.svg`,
+      content: getSideBarContent(),
     },
     {
       title: 'Pregnancy',
       icon: `${ICON_PATH}/pregnancy.svg`,
+      content: getSideBarContent(),
     },
   ];
 
@@ -146,18 +146,22 @@ function getModules() {
     {
       title: 'Relationships',
       icon: `${ICON_PATH}/pregnancy.svg`,
+      content: getSideBarContent(),
     },
     {
       title: 'Menopause or Manopause',
       icon: `${ICON_PATH}/pregnancy.svg`,
+      content: getSideBarContent(),
     },
     {
       title: 'Family',
       icon: `${ICON_PATH}/pregnancy.svg`,
+      content: getSideBarContent(),
     },
     {
       title: 'Parental Leave & Back to Work',
       icon: `${ICON_PATH}/pregnancy.svg`,
+      content: getSideBarContent(),
     },
   ];
 

@@ -17,9 +17,9 @@ const ModuleList: FunctionComponent<ModuleListTypes> = ({ heading, subheading, m
       </Typography>
       <Typography>{subheading}</Typography>
       <Grid container className="gap-x-3 gap-y-7 items-stretch my-5">
-        {modules.map(({ title, icon, isTop }, index) => (
+        {modules.map(({ title, icon, isTop, content }, index) => (
           <Grid item key={index} md={3} xl={2} className="min-h-[200px]">
-            <ModuleCard title={title} icon={icon} isTop={isTop} />
+            <ModuleCard title={title} icon={icon} isTop={isTop} content={content} />
           </Grid>
         ))}
       </Grid>

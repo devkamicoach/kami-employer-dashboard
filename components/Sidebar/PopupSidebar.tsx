@@ -1,14 +1,18 @@
-import { Drawer, Typography } from '@mui/material';
+import { Box, Drawer, Typography } from '@mui/material';
 import { ReactNode, FunctionComponent } from 'react';
+import { useModuleDispatch } from 'context/ModuleContext';
+import ClearIcon from '@mui/icons-material/Clear';
 
 type PopupSidebarTypes = {
-  heading: string;
+  heading: string | undefined;
   subheading?: string | undefined;
   content: ReactNode;
   open?: boolean;
 };
 
 const PopupSidebar: FunctionComponent<PopupSidebarTypes> = ({ heading, subheading, content, open }) => {
+  const dispatch = useModuleDispatch();
+
   return (
     <Drawer
       variant="persistent"
@@ -27,6 +31,11 @@ const PopupSidebar: FunctionComponent<PopupSidebarTypes> = ({ heading, subheadin
         },
       }}
     >
+      <Box className="self-end">
+        <button onClick={() => dispatch({ type: 'close' })}>
+          <ClearIcon />
+        </button>
+      </Box>
       <Typography component="h3" className="text-kami-green font-body">
         {subheading}
       </Typography>
