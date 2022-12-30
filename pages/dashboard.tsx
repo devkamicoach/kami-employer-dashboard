@@ -4,15 +4,44 @@ import Messages from 'components/Dashboard/Messages';
 
 import { Box, Button, TextField, Typography } from '@mui/material';
 import TopTopics from 'components/TopTopics/TopTopics';
-import MentalWellness from 'components/Icons/Topics/MentalWellness';
-import Sleep from 'components/Icons/Topics/Sleep';
-import Wellbeing from 'components/Icons/Topics/Wellbeing';
 import QuickReport from 'components/Dashboard/QuickReport';
 import PopularProgrammes from 'components/Dashboard/PopularProgrammes';
 import PopupSidebar from 'components/Sidebar/PopupSidebar';
 import CheckboxCard from 'components/Cards/CheckboxCard';
 
 const Dashboard = () => {
+  const { messages, topics, reports, insights, checkList } = getData();
+  return (
+    <Box className="flex">
+      <DashboardLayout
+        heading={<Heading company="Optimum Health, LTD" user="Erika" />}
+        messages={<Messages messages={messages} />}
+        topics={<TopTopics topics={topics} />}
+        report={<QuickReport reports={reports} />}
+        programmes={<PopularProgrammes insights={insights} />}
+      />
+      <PopupSidebar
+        heading="Onboarding Checklist"
+        content={
+          <Box className="flex flex-col gap-4">
+            <Typography component="p" className="text-sm">
+              2 out of 4 items completed
+            </Typography>
+            {checkList.map(({ title, description, checked, actions }, index) => (
+              <CheckboxCard key={index} title={title} description={description} checked={checked} actions={actions} />
+            ))}
+          </Box>
+        }
+      />
+    </Box>
+  );
+};
+
+export default Dashboard;
+
+function getData() {
+  const ICON_PATH = '/images/topic-logos';
+
   const messages = [
     {
       icon: '/images/kami-icon.webp',
@@ -34,17 +63,17 @@ const Dashboard = () => {
 
   const topics = [
     {
-      icon: <MentalWellness width={25} height={25} />,
+      icon: `${ICON_PATH}/mental-wellness.svg`,
       title: 'Mental Wellness',
       impressions: '3,230',
     },
     {
-      icon: <Sleep width={25} height={25} />,
+      icon: `${ICON_PATH}/sleep.svg`,
       title: 'Sleep',
       impressions: '2,710',
     },
     {
-      icon: <Wellbeing width={25} height={25} />,
+      icon: `${ICON_PATH}/well-being.svg`,
       title: 'Well-being',
       impressions: '1,100',
     },
@@ -121,31 +150,5 @@ const Dashboard = () => {
       ),
     },
   ];
-
-  return (
-    <Box className="flex">
-      <DashboardLayout
-        heading={<Heading company="Optimum Health, LTD" user="Erika" />}
-        messages={<Messages messages={messages} />}
-        topics={<TopTopics topics={topics} />}
-        report={<QuickReport reports={reports} />}
-        programmes={<PopularProgrammes insights={insights} />}
-      />
-      <PopupSidebar
-        heading="Onboarding Checklist"
-        content={
-          <Box className="flex flex-col gap-4">
-            <Typography component="p" className="text-sm">
-              2 out of 4 items completed
-            </Typography>
-            {checkList.map(({ title, description, checked, actions }, index) => (
-              <CheckboxCard key={index} title={title} description={description} checked={checked} actions={actions} />
-            ))}
-          </Box>
-        }
-      />
-    </Box>
-  );
-};
-
-export default Dashboard;
+  return { messages, topics, reports, insights, checkList };
+}

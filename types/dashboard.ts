@@ -1,7 +1,5 @@
-import { ReactNode } from 'react';
-
 export type TopicTypes = {
-  icon: ReactNode;
+  icon: string;
   title: string;
   impressions: string;
 };
