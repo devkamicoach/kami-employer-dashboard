@@ -1,6 +1,6 @@
 import { Box, Drawer, Typography } from '@mui/material';
 import { ReactNode, FunctionComponent } from 'react';
-import { useModuleDispatch } from 'context/ModuleContext';
+import { useSidebarDispatch } from 'context/SidebarContext';
 import ClearIcon from '@mui/icons-material/Clear';
 
 type PopupSidebarTypes = {
@@ -11,7 +11,7 @@ type PopupSidebarTypes = {
 };
 
 const PopupSidebar: FunctionComponent<PopupSidebarTypes> = ({ heading, subheading, content, open }) => {
-  const dispatch = useModuleDispatch();
+  const dispatch = useSidebarDispatch();
 
   return (
     <Drawer

@@ -1,12 +1,6 @@
 import { Box, Card, CardActions, CardContent, Checkbox, FormControlLabel, Typography } from '@mui/material';
-import { FunctionComponent, ReactNode } from 'react';
-
-type CheckboxCardTypes = {
-  title: string;
-  description: string;
-  actions?: ReactNode | undefined;
-  checked?: boolean;
-};
+import { FunctionComponent } from 'react';
+import type { CheckboxCardTypes } from 'types/dashboard';
 
 const CheckboxCard: FunctionComponent<CheckboxCardTypes> = ({ title, description, actions, checked }) => {
   return (

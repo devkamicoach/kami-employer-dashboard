@@ -1,12 +1,12 @@
 import { Box, Card, CardContent, Typography } from '@mui/material';
 import Chip from 'components/Chip/Chip';
-import { useModuleDispatch } from 'context/ModuleContext';
+import { useSidebarDispatch } from 'context/SidebarContext';
 import Image from 'next/image';
 import { FunctionComponent } from 'react';
 import type { ModuleCardTypes } from 'types/modules';
 
 const ModuleCard: FunctionComponent<ModuleCardTypes> = ({ title, icon, isTop = false, content }) => {
-  const dispatch = useModuleDispatch();
+  const dispatch = useSidebarDispatch();
   return (
     <Card
       className="max-w-[175px] h-full"

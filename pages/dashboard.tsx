@@ -8,9 +8,27 @@ import QuickReport from 'components/Dashboard/QuickReport';
 import PopularProgrammes from 'components/Dashboard/PopularProgrammes';
 import PopupSidebar from 'components/Sidebar/PopupSidebar';
 import CheckboxCard from 'components/Cards/CheckboxCard';
+import { useSidebar, SidebarProvider } from 'context/SidebarContext';
+import { FunctionComponent } from 'react';
 
-const Dashboard = () => {
-  const { messages, topics, reports, insights, checkList } = getData();
+import type { ProgrammeInsightCardTypes, QuickInsightCardTypes, TopicTypes, CheckboxCardTypes } from 'types/dashboard';
+
+type DashboardContentTypes = {
+  messages: Array<any>;
+  topics: Array<TopicTypes>;
+  reports: Array<QuickInsightCardTypes>;
+  insights: Array<ProgrammeInsightCardTypes>;
+  checkList: Array<CheckboxCardTypes>;
+};
+
+const DashboardContent: FunctionComponent<DashboardContentTypes> = ({
+  messages,
+  topics,
+  reports,
+  insights,
+  checkList,
+}) => {
+  const content = useSidebar() as any;
   return (
     <Box className="flex">
       <DashboardLayout
@@ -32,9 +50,25 @@ const Dashboard = () => {
             ))}
           </Box>
         }
-        open={true}
+        open={content?.open}
       />
     </Box>
+  );
+};
+
+const Dashboard = () => {
+  const { messages, topics, reports, insights, checkList } = getData();
+
+  return (
+    <SidebarProvider open={true}>
+      <DashboardContent
+        messages={messages}
+        topics={topics}
+        reports={reports}
+        insights={insights}
+        checkList={checkList}
+      />
+    </SidebarProvider>
   );
 };
 
