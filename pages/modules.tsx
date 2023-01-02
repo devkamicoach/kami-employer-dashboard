@@ -1,8 +1,8 @@
-import ModuleLayout from 'components/Modules/ModuleLayout';
-import ModuleList from 'components/Modules/ModuleList';
+import ModuleLayout from 'components/PageComponents/Modules/ModuleLayout';
+import ModuleList from 'components/PageComponents/Modules/ModuleList';
 import PopupSidebar from 'components/Sidebar/PopupSidebar';
 import { useSidebar, SidebarProvider } from 'context/SidebarContext';
-import ModuleSideBarContent from 'components/Modules/ModuleSidebarContent';
+import ModuleSideBarContent from 'components/PageComponents/Modules/ModuleSidebarContent';
 import type { ModuleCardTypes } from 'types/modules';
 import { FunctionComponent } from 'react';
 

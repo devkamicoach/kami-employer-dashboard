@@ -1,11 +1,11 @@
-import DashboardLayout from 'components/Dashboard/DashboardLayout';
-import Heading from 'components/Dashboard/Heading';
-import Messages from 'components/Dashboard/Messages';
+import DashboardLayout from 'components/PageComponents/Dashboard/DashboardLayout';
+import Heading from 'components/PageComponents/Dashboard/Heading';
+import Messages from 'components/PageComponents/Dashboard/Messages';
 
 import { Box, Button, TextField, Typography } from '@mui/material';
 import TopTopics from 'components/TopTopics/TopTopics';
-import QuickReport from 'components/Dashboard/QuickReport';
-import PopularProgrammes from 'components/Dashboard/PopularProgrammes';
+import QuickReport from 'components/PageComponents/Dashboard/QuickReport';
+import PopularProgrammes from 'components/PageComponents/Dashboard/PopularProgrammes';
 import PopupSidebar from 'components/Sidebar/PopupSidebar';
 import CheckboxCard from 'components/Cards/CheckboxCard';
 import { useSidebar, SidebarProvider } from 'context/SidebarContext';
