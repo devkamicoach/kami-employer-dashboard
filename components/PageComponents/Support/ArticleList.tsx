@@ -16,7 +16,7 @@ const ArticleList: FunctionComponent<ArticleListTypes> = ({ articles }) => {
       <Typography component="p" className="mb-5">
         Resources on Workplace Wellbeing
       </Typography>
-      <Grid container className="gap-y-8 gap-x-4">
+      <Grid container className="gap-y-8 gap-x-4 items-stretch">
         {articles.map(({ authorImg, articleImg, authorName, summary, title, topics }, index) => (
           <Grid key={index} lg={3} item>
             <ArticleCard

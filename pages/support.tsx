@@ -1,9 +1,59 @@
 import ArticleList from 'components/PageComponents/Support/ArticleList';
 import SupportLayout from 'components/PageComponents/Support/SupportLayout';
+import PopupSidebar from 'components/Sidebar/PopupSidebar';
+import { SidebarProvider, useSidebar } from '../context/SidebarContext';
+import type { ArticleCardTypes } from 'types/support';
+import { FunctionComponent } from 'react';
+import KamiCard from 'components/Cards/KamiCard';
+import { Box } from '@mui/material';
+
+type SupportContentTypes = {
+  articles: Array<ArticleCardTypes>;
+};
+
+const SupportContent: FunctionComponent<SupportContentTypes> = ({ articles }) => {
+  const content = useSidebar() as any;
+  const supportItems = [
+    {
+      title: 'Build a bespoke programme',
+      description: 'We work with you to create a programme that is fully aligned to your overall vision and strategy.',
+    },
+    {
+      title: 'Plan a workshop or seminar with Kami',
+      description:
+        'Help your workforce thrive, at home and at work with module-specific workshops to build a culture of wellbeing.',
+    },
+    {
+      title: 'Sign up for our HR roundtables',
+      description:
+        'HR Roundtable membership includes weekly virtual HR roundtables, topic-specific virtual HR roundtables, and one-on-one coaching.',
+    },
+  ];
+  return (
+    <>
+      <SupportLayout articles={<ArticleList articles={articles} />} />
+      <PopupSidebar
+        heading="Collaborate with us"
+        content={
+          <Box className="flex flex-col mt-4 gap-4">
+            {supportItems.map(({ title, description }, index) => (
+              <KamiCard key={index} title={title} description={description} />
+            ))}
+          </Box>
+        }
+        open={content?.open}
+      />
+    </>
+  );
+};
 
 const Support = () => {
   const articles = getArticles();
-  return <SupportLayout articles={<ArticleList articles={articles} />} />;
+  return (
+    <SidebarProvider open={true}>
+      <SupportContent articles={articles} />
+    </SidebarProvider>
+  );
 };
 
 export default Support;

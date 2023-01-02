@@ -7,18 +7,18 @@ import TopTopics from 'components/TopTopics/TopTopics';
 import QuickReport from 'components/PageComponents/Dashboard/QuickReport';
 import PopularProgrammes from 'components/PageComponents/Dashboard/PopularProgrammes';
 import PopupSidebar from 'components/Sidebar/PopupSidebar';
-import CheckboxCard from 'components/Cards/CheckboxCard';
+import KamiCard from 'components/Cards/KamiCard';
 import { useSidebar, SidebarProvider } from 'context/SidebarContext';
 import { FunctionComponent } from 'react';
 
-import type { ProgrammeInsightCardTypes, QuickInsightCardTypes, TopicTypes, CheckboxCardTypes } from 'types/dashboard';
+import type { ProgrammeInsightCardTypes, QuickInsightCardTypes, TopicTypes, KamiCardTypes } from 'types/dashboard';
 
 type DashboardContentTypes = {
   messages: Array<any>;
   topics: Array<TopicTypes>;
   reports: Array<QuickInsightCardTypes>;
   insights: Array<ProgrammeInsightCardTypes>;
-  checkList: Array<CheckboxCardTypes>;
+  checkList: Array<KamiCardTypes>;
 };
 
 const DashboardContent: FunctionComponent<DashboardContentTypes> = ({
@@ -46,7 +46,14 @@ const DashboardContent: FunctionComponent<DashboardContentTypes> = ({
               2 out of 4 items completed
             </Typography>
             {checkList.map(({ title, description, checked, actions }, index) => (
-              <CheckboxCard key={index} title={title} description={description} checked={checked} actions={actions} />
+              <KamiCard
+                key={index}
+                title={title}
+                description={description}
+                checked={checked}
+                actions={actions}
+                isCheckbox={true}
+              />
             ))}
           </Box>
         }

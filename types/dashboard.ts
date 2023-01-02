@@ -18,9 +18,10 @@ export type ProgrammeInsightCardTypes = {
   rate: number;
 };
 
-export type CheckboxCardTypes = {
+export type KamiCardTypes = {
   title: string;
   description: string;
   actions?: ReactNode | undefined;
   checked?: boolean;
+  isCheckbox?: boolean;
 };
