@@ -9,7 +9,7 @@ const ModuleCard: FunctionComponent<ModuleCardTypes> = ({ title, icon, isTop = f
   const dispatch = useSidebarDispatch();
   return (
     <Card
-      className="max-w-[175px] h-full"
+      className="hover:cursor-pointer hover:scale-110 hover:transition-all max-w-[175px] h-full"
       onClick={() => {
         dispatch({ type: 'open', content: { title, ...content } });
       }}

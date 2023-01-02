@@ -62,7 +62,7 @@ function getSideBarContent() {
     description:
       'For both men and women in their 40s and 50s, the changes in hormone levels can have profound effects on their wellbeing and ability to function in a way that can be alarming and overwhelming to them. At Kinhub, we know that this significant life transition needs the right support to enable both men and women to feel empowered.',
     testimonial: '92% said resources from this module made them feel supported',
-    price: '30',
+    price: 30,
     details: [
       'Responsive Chat',
       'Curated content and resources',

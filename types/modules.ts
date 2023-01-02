@@ -2,7 +2,7 @@ export type ModuleSideBarContentTypes = {
   title: string | undefined;
   description: string | undefined;
   testimonial: string | undefined;
-  price: string | undefined;
+  price: number | undefined;
   details: Array<string> | undefined;
 };
 

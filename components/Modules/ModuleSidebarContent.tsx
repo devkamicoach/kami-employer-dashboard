@@ -19,7 +19,7 @@ const ModuleSideBarContent: FunctionComponent<ModuleSideBarContentTypes> = ({
       <Box className="bg-[#E7E7E7] p-5 rounded-md">
         <Typography>{title}</Typography>
         <Typography component="h3" className="text-4xl">
-          {price}
+          {price?.toLocaleString('en-GB', { style: 'currency', currency: 'EUR' })}
         </Typography>
         <List>
           {details?.map((detail, index) => (
