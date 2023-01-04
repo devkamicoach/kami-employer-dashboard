@@ -4,6 +4,18 @@ import UserInsights from "components/PageComponents/Insights/UserInsights";
 import TopTopics from "components/TopTopics/TopTopics"
 
 const Insights = () => {
+  const { topics, insights, quickInsights, teams } = getData();
+  return (
+    <InisghtsLayout
+      insights={<UserInsights insights={insights} quickInsights={quickInsights} />}
+      engagements={<Engagements teams={teams} />}
+      topics={<TopTopics topics={topics} />} />
+  )
+}
+
+export default Insights
+
+function getData() {
   const ICON_PATH = '/images/topic-logos';
 
   const topics = [
@@ -48,12 +60,32 @@ const Insights = () => {
     },
   ];
 
-  return (
-    <InisghtsLayout
-      insights={<UserInsights insights={insights} quickInsights={quickInsights} />}
-      engagements={<Engagements />}
-      topics={<TopTopics topics={topics} />} />
-  )
-}
+  const teams = [
+    {
+      name: "Procurement Team",
+      impressions: 13230
+    },
+    {
+      name: "Editorial Team",
+      impressions: 2710
+    },
+    {
+      name: "Administration Team",
+      impressions: 1100
+    },
+    {
+      name: "Marketing Team",
+      impressions: 1100
+    },
+    {
+      name: "Data & Growth",
+      impressions: 4000
+    },
+    {
+      name: "Design Team",
+      impressions: 2500
+    }
+  ]
 
-export default Insights
+  return { topics, insights, quickInsights, teams }
+}
