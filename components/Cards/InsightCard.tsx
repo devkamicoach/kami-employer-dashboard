@@ -10,7 +10,7 @@ const InsightCard: FunctionComponent<InsightCardTypes> = ({ rate, description })
       <CardContent>
         <Box className="flex items-center gap-4">
           <Box className="basis-1/4">
-            <CircularProgressWithLabel value={rate} />
+            <CircularProgressWithLabel customColor="red" value={rate} />
           </Box>
           <Box className="basis-3/4">
             <Typography component="p" className="text-sm">
