@@ -1,54 +1,9 @@
 import { Grid } from "@mui/material"
-import {
-  Chart as ChartJS,
-  CategoryScale,
-  LinearScale,
-  BarElement,
-  Title,
-  Tooltip,
-  Legend,
-
-} from 'chart.js';
 import { Bar } from 'react-chartjs-2';
-
-
-ChartJS.register(
-  CategoryScale,
-  LinearScale,
-  BarElement,
-  Title,
-  Tooltip,
-  Legend
-);
+import initBarChart from "utils/barChartOptions";
 
 const Engagements = () => {
-
-  const options: any = {
-    plugins: {
-      legend: {
-        display: false
-
-      },
-      title: {
-        text: "User engagement",
-        display: true,
-        color: "#403F3F",
-        font: {
-          size: 18
-        },
-        align: "start",
-      }
-    },
-    scales: {
-      xAxis: {
-        display: false
-      },
-      yAxis: {
-        max: 1
-      }
-    },
-  };
-
+  const options = initBarChart("User engagement");
   const data = {
     labels: [
       "January",
