@@ -18,7 +18,7 @@ const CircularProgressWithLabel = (props: CircularProgressProps & { value: numbe
           justifyContent: 'center',
         }}
       >
-        <Typography variant="caption" className="text-kami-green text-2xl">{`${Math.round(props.value)}%`}</Typography>
+        <Typography variant="caption" className="text-kami-green text-2xl">{`${props.value}%`}</Typography>
       </Box>
     </Box>
   );
