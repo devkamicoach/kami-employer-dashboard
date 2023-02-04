@@ -1,5 +1,4 @@
 import Navbar from 'components/Navbar/Navbar';
-import Sidebar from 'components/Sidebar/Sidebar';
 import { FunctionComponent, ReactNode } from 'react';
 import { Box, Toolbar } from '@mui/material';
 import theme from 'styles/themes/lightTheme';
@@ -15,8 +14,8 @@ const Layout: FunctionComponent<LayoutTypes> = ({ hideNavigation, children }) =>
     <ThemeProvider theme={theme}>
       <Box display="flex">
         {!hideNavigation && <Navbar />}
-        {!hideNavigation && <Sidebar />}
-        <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+        {/* {!hideNavigation && <Sidebar />} */}
+        <Box component="main" sx={{ flexGrow: 1, p: 3, px: 10 }} className="bg-kami-white">
           <Toolbar />
           {children}
         </Box>

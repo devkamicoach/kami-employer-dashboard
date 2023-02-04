@@ -8,7 +8,7 @@ type MessagesTypes = {
 
 const Messages: FunctionComponent<MessagesTypes> = ({ messages }) => {
   return (
-    <Grid container className="gap-2">
+    <Grid container className="gap-2 justify-between">
       {messages.map((message: any, index) => {
         return (
           <Grid key={index} md={5} item>
@@ -17,7 +17,7 @@ const Messages: FunctionComponent<MessagesTypes> = ({ messages }) => {
               icon={message.icon}
               message={message.message}
               actionButton={message?.actionButton}
-            />{' '}
+            />
           </Grid>
         );
       })}

@@ -1,9 +1,9 @@
 import { Box, Grid, Typography } from '@mui/material';
 import Image from 'next/image';
 import { FunctionComponent } from 'react';
-import type { TopicTypes } from 'types/dashboard';
+import type { PulseTypes } from 'types/dashboard';
 
-const Topic: FunctionComponent<TopicTypes> = ({ icon, title, impressions }) => {
+const Pulse: FunctionComponent<PulseTypes> = ({ icon, title, responses, from }) => {
   return (
     <Grid container className="items-center gap-2">
       <Grid item>
@@ -15,10 +15,12 @@ const Topic: FunctionComponent<TopicTypes> = ({ icon, title, impressions }) => {
         <Typography component="h3" className="font-body text-kami-blue font-bold">
           {title}
         </Typography>
-        <Typography component="p">{impressions} active impressions</Typography>
+        <Typography component="p">
+          {responses} from {from}
+        </Typography>
       </Grid>
     </Grid>
   );
 };
 
-export default Topic;
+export default Pulse;

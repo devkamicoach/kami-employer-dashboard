@@ -13,10 +13,10 @@ const PopularProgrammes: FunctionComponent<ProgrammeInsightsTypes> = ({ insights
       <Typography component="h2" className="font-body mb-3 uppercase font-bold">
         Popular Programmes
       </Typography>
-      <Grid container className="gap-2">
+      <Grid container className="gap-2 justify-between">
         {insights.map(({ title, topics, rate }, index) => {
           return (
-            <Grid key={index} sm={12} xl={5} item>
+            <Grid key={index} sm={12} xl={5} item className="justify-center">
               <ProgrammeInsightsCard title={title} topics={topics} rate={rate} />
             </Grid>
           );

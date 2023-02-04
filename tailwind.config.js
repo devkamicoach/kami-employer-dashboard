@@ -14,7 +14,7 @@ module.exports = {
     extend: {
       colors: {
         'kami-green': '#66C5BF',
-        'kami-white': '#FAF8F6',
+        'kami-white': '#FAF8F5',
         'kami-blue': '#284F73',
         'kami-gray': '#666665',
         'kami-text': '#403F3F',
@@ -36,7 +36,7 @@ module.exports = {
       },
       fontFamily: {
         heading: 'Moret, serif',
-        body: 'Graphik, sans-serif',
+        body: 'SofiaPro, sans-serif',
       },
     },
   },

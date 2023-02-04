@@ -10,10 +10,10 @@ type TopTopicsTypes = {
 const TopTopics: FunctionComponent<TopTopicsTypes> = ({ topics }) => {
   return (
     <>
-      <Typography component="h2" className="font-body mb-3 uppercase font-bold">
-        Top topics this week
+      <Typography component="h2" className="font-body mb-3 normal-case font-bold">
+        Topics of the Week
       </Typography>
-      <Grid container>
+      <Grid container className="justify-between">
         {topics.map(({ icon, title, impressions }, index) => (
           <Grid key={index} item sm={3}>
             <Topic icon={icon} title={title} impressions={impressions} />

@@ -3,6 +3,7 @@ import Heading from 'components/PageComponents/Dashboard/Heading';
 import Messages from 'components/PageComponents/Dashboard/Messages';
 
 import { Box, Button, TextField, Typography } from '@mui/material';
+import PulseCheck from 'components/PulseCheck/PulseCheck';
 import TopTopics from 'components/TopTopics/TopTopics';
 import QuickReport from 'components/PageComponents/Dashboard/QuickReport';
 import PopularProgrammes from 'components/PageComponents/Dashboard/PopularProgrammes';
@@ -11,10 +12,17 @@ import KamiCard from 'components/Cards/KamiCard';
 import { useSidebar, SidebarProvider } from 'context/SidebarContext';
 import { FunctionComponent } from 'react';
 
-import type { ProgrammeInsightCardTypes, QuickInsightCardTypes, TopicTypes, KamiCardTypes } from 'types/dashboard';
+import type {
+  ProgrammeInsightCardTypes,
+  QuickInsightCardTypes,
+  PulseTypes,
+  TopicTypes,
+  KamiCardTypes,
+} from 'types/dashboard';
 
 type DashboardContentTypes = {
   messages: Array<any>;
+  pulses: Array<PulseTypes>;
   topics: Array<TopicTypes>;
   reports: Array<QuickInsightCardTypes>;
   insights: Array<ProgrammeInsightCardTypes>;
@@ -23,6 +31,7 @@ type DashboardContentTypes = {
 
 const DashboardContent: FunctionComponent<DashboardContentTypes> = ({
   messages,
+  pulses,
   topics,
   reports,
   insights,
@@ -30,18 +39,22 @@ const DashboardContent: FunctionComponent<DashboardContentTypes> = ({
 }) => {
   const content = useSidebar() as any;
   return (
-    <Box className="flex">
+    <Box className="flex ml-20">
       <DashboardLayout
-        heading={<Heading company="Optimum Health, LTD" user="Erika" />}
+        heading={<Heading user="Joyce" />}
         messages={<Messages messages={messages} />}
+        pulses={<PulseCheck pulses={pulses} />}
         topics={<TopTopics topics={topics} />}
         report={<QuickReport reports={reports} />}
         programmes={<PopularProgrammes insights={insights} />}
       />
       <PopupSidebar
-        heading="Onboarding Checklist"
+        heading="Announcements"
         content={
           <Box className="flex flex-col gap-4">
+            <Typography component="h2" className="text-2xl">
+              Onboarding Checklist
+            </Typography>
             <Typography component="p" className="text-sm">
               2 out of 4 items completed
             </Typography>
@@ -64,12 +77,13 @@ const DashboardContent: FunctionComponent<DashboardContentTypes> = ({
 };
 
 const Dashboard = () => {
-  const { messages, topics, reports, insights, checkList } = getData();
+  const { messages, pulseChecks, topics, reports, insights, checkList } = getData();
 
   return (
     <SidebarProvider open={true}>
       <DashboardContent
         messages={messages}
+        pulses={pulseChecks}
         topics={topics}
         reports={reports}
         insights={insights}
@@ -82,40 +96,66 @@ const Dashboard = () => {
 export default Dashboard;
 
 function getData() {
-  const ICON_PATH = '/images/topic-logos';
+  const ICON_PATH = '/images';
 
   const messages = [
     {
-      icon: '/images/kami-icon.webp',
-      heading: 'Message from kami',
+      icon: '/images/check-in-icon.svg',
+      heading: 'Send a public announcement',
       message:
-        "We're thrilled to announce that we are adding the following new modules to our core platform experience: Menopause, Financial Wellbeing, and Back to Work Coaching. You may access this directly in your Modules page. Read more... ",
+        'Send a company wide announcement or quick pulse check with a custom message to all your employees on Kinhub',
+      actionButton: (
+        <Button variant="contained" className="normal-case bg-kami-gray w-full hover:bg-gray-500">
+          Send an announcement
+        </Button>
+      ),
     },
     {
-      icon: '/images/check-in-icon.svg',
-      heading: 'Check in with your employees',
-      message: 'Send a quick pulse check with a custom message to all your employees with Kami ',
+      icon: '/images/announcement-icon.svg',
+      heading: 'Send a private check-in',
+      message: 'Send a private announcement or check-in to individual or specific employees on Kinhub',
       actionButton: (
-        <Button variant="contained" className="bg-kami-gray w-full hover:bg-gray-500">
-          Send pulse check
+        <Button variant="contained" className="normal-case bg-kami-gray w-full hover:bg-gray-500">
+          Send a private check-in
         </Button>
       ),
     },
   ];
 
+  const pulseChecks = [
+    {
+      icon: `${ICON_PATH}/pulse-logos/happy.svg`,
+      title: '84 responses',
+      responses: '32',
+      from: 'Commercials Team',
+    },
+    {
+      icon: `${ICON_PATH}/pulse-logos/sad.svg`,
+      title: '51 responses',
+      responses: '19',
+      from: 'Engineering Team',
+    },
+    {
+      icon: `${ICON_PATH}/pulse-logos/vhappy.svg`,
+      title: '11 responses',
+      responses: '4',
+      from: 'Design Team',
+    },
+  ];
+
   const topics = [
     {
-      icon: `${ICON_PATH}/mental-wellness.svg`,
+      icon: `${ICON_PATH}/topic-logos/mental-wellness.svg`,
       title: 'Mental Wellness',
       impressions: '3,230',
     },
     {
-      icon: `${ICON_PATH}/sleep.svg`,
+      icon: `${ICON_PATH}/topic-logos/sleep.svg`,
       title: 'Sleep',
       impressions: '2,710',
     },
     {
-      icon: `${ICON_PATH}/well-being.svg`,
+      icon: `${ICON_PATH}/topic-logos/well-being.svg`,
       title: 'Well-being',
       impressions: '1,100',
     },
@@ -124,23 +164,23 @@ function getData() {
   const reports = [
     {
       title: 'User Sessions',
+      value: '6.2k',
+      percentage: '+ 62.12% from last week',
+    },
+    {
+      title: 'Article Views',
       value: '4.5k',
-      percentage: '33.45%',
+      percentage: '- 1.89% from last week',
     },
     {
-      title: 'Avg. Sessions',
-      value: '04:23',
-      percentage: '3.15%',
+      title: 'Content Rating',
+      value: '4.7/5',
+      percentage: '+ 23.68% from last week',
     },
     {
-      title: 'User Sessions',
-      value: '4.5k',
-      percentage: '33.45%',
-    },
-    {
-      title: 'Avg. Sessions',
-      value: '04:23',
-      percentage: '3.15%',
+      title: 'New Users',
+      value: '+52',
+      percentage: '+ 3.15% from last week',
     },
   ];
 
@@ -151,17 +191,16 @@ function getData() {
       rate: 50,
     },
     {
-      title: 'Maintaining Your Relationships',
-      topics: ['Family', 'Work-Life', 'Relationships'],
+      title: 'Maintaining Healthy Relationships',
+      topics: ['Family', 'Relationships'],
       rate: 67,
     },
   ];
-
   const checkList = [
     {
-      title: 'Log in to Kami',
+      title: 'Log in to Kinhub',
       description:
-        "You've logged in, so you've automatically crossed out this item on your checklist. Welcome to Kami, we're happy to have you.",
+        "You've logged in, so you've automatically crossed out this item on your checklist. Welcome to Kinhub, we're happy to have you.",
       checked: true,
     },
     {
@@ -170,9 +209,9 @@ function getData() {
       checked: true,
     },
     {
-      title: 'Provide login credentials to your users',
+      title: 'Onboard users to your 600 seats!',
       description:
-        'You have 50 seats allocated for users in your organization. You can manage these seats and created accounts on your Users Management page.',
+        'You have 600 seats allocated for users in your organization. You can manage these seats and created accounts on your Users Management page.',
       actions: (
         <Button variant="contained" className="bg-kami-green rounded-full w-full">
           Go to Users Management Page
@@ -180,8 +219,8 @@ function getData() {
       ),
     },
     {
-      title: 'Sign up for our Kami Newsletter',
-      description: 'Be the first to hear about new content, module, partnerships, or product updates from Kami.',
+      title: 'Sign up for the Kinhub Newsletter',
+      description: 'Be the first to hear about new content, module, partnerships, or product updates from Newsletters.',
       actions: (
         <Box className="flex w-full gap-2">
           <TextField id="outlined-basic" label="Input your email here!" className="basis-3/4" variant="outlined" />
@@ -192,5 +231,5 @@ function getData() {
       ),
     },
   ];
-  return { messages, topics, reports, insights, checkList };
+  return { messages, pulseChecks, topics, reports, insights, checkList };
 }

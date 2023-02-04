@@ -2,22 +2,22 @@ import { Box, Typography } from '@mui/material';
 import { FunctionComponent } from 'react';
 
 type HeadingTypes = {
-  company: string;
+  // company: string;
   user: string;
 };
-const Heading: FunctionComponent<HeadingTypes> = ({ company, user }) => {
+const Heading: FunctionComponent<HeadingTypes> = ({ user }) => {
   return (
     <Box>
-      <Typography component="h3" className="font-body">
+      {/* <Typography component="h3" className="font-body">
         {company}
-      </Typography>
+      </Typography> */}
       <Typography component="h1" className="text-2xl">
-        Good afternoon, {user}.
+        Welcome back, {user}!
       </Typography>
-      <Typography>
+      {/* <Typography>
         This is your official Employer dashboard, where you are provided administration access and user insights for
         your partnership with Kami. We&apos;re looking forward to hearing your feedback.
-      </Typography>
+      </Typography> */}
     </Box>
   );
 };

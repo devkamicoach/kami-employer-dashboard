@@ -2,7 +2,7 @@ import { Box, Drawer, Typography } from '@mui/material';
 import { ReactNode, FunctionComponent } from 'react';
 import { useSidebarDispatch } from 'context/SidebarContext';
 import ClearIcon from '@mui/icons-material/Clear';
-
+import MessageCard from '../Cards/MessageCard';
 type PopupSidebarTypes = {
   heading: string | undefined;
   subheading?: string | undefined;
@@ -10,7 +10,7 @@ type PopupSidebarTypes = {
   open?: boolean;
 };
 
-const PopupSidebar: FunctionComponent<PopupSidebarTypes> = ({ heading, subheading, content, open }) => {
+const PopupSidebar: FunctionComponent<PopupSidebarTypes> = ({ heading, content, open }) => {
   const dispatch = useSidebarDispatch();
 
   return (
@@ -25,7 +25,7 @@ const PopupSidebar: FunctionComponent<PopupSidebarTypes> = ({ heading, subheadin
           width: 400,
           boxSizing: 'border-box',
           top: 64,
-          backgroundColor: '#FAF8F6',
+          backgroundColor: '#FAF8F5',
           paddingTop: 5,
           paddingInline: 2,
         },
@@ -36,12 +36,15 @@ const PopupSidebar: FunctionComponent<PopupSidebarTypes> = ({ heading, subheadin
           <ClearIcon />
         </button>
       </Box>
-      <Typography component="h3" className="text-kami-green font-body">
-        {subheading}
-      </Typography>
       <Typography component="h2" className="text-2xl">
         {heading}
       </Typography>
+      <MessageCard
+        heading="👋🏽 Message from Kinhub"
+        icon="/images/sidebar-announcement-icon.svg"
+        message="We're thrilled to announce that our new modules: Menopause, Financial Wellbeing, and Back to Work Coaching are now live!"
+        actionButton=""
+      />
       {content}
     </Drawer>
   );

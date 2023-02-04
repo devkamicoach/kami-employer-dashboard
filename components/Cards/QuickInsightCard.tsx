@@ -3,6 +3,8 @@ import { FunctionComponent } from 'react';
 import type { QuickInsightCardTypes } from 'types/dashboard';
 
 const QuickInsightCard: FunctionComponent<QuickInsightCardTypes> = ({ title, value, percentage }) => {
+  const color = percentage.includes('+') ? '#40AD79' : '#C84F4F';
+
   return (
     <Card className="max-w-[230px]">
       <CardContent>
@@ -13,7 +15,13 @@ const QuickInsightCard: FunctionComponent<QuickInsightCardTypes> = ({ title, val
           <Typography component="h3" className="font-body font-bold text-kami-blue text-4xl xl:text-5xl">
             {value}
           </Typography>
-          <Typography component="h3" className="font-body text-[#7BD673] font-bold">
+          <Typography
+            component="h3"
+            className="font-body font-bold"
+            style={{
+              color: color,
+            }}
+          >
             {percentage}
           </Typography>
         </Box>

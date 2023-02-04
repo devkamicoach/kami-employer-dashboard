@@ -12,7 +12,7 @@ type MessageCardTypes = {
 
 const MessageCard: FunctionComponent<MessageCardTypes> = ({ icon, message, heading, actionButton }) => {
   return (
-    <Card className="bg-kami-white p-3" sx={{ boxShadow: 'none' }}>
+    <Card className="bg-[#F2EFEB] p-3" sx={{ boxShadow: 'none' }}>
       <CardContent>
         <Box className="flex items-center gap-2 pb-3">
           <Box className="relative rounded-full" width={25} height={25}>
