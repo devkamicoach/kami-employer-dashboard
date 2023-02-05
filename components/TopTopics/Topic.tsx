@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { FunctionComponent } from 'react';
 import type { TopicTypes } from 'types/dashboard';
 
-const Topic: FunctionComponent<TopicTypes> = ({ icon, title, impressions }) => {
+const Topic: FunctionComponent<TopicTypes> = ({ icon, title, impressions, from }) => {
   return (
     <Grid container className="items-center gap-2">
       <Grid item>
@@ -15,7 +15,9 @@ const Topic: FunctionComponent<TopicTypes> = ({ icon, title, impressions }) => {
         <Typography component="h3" className="font-body text-kami-blue font-bold">
           {title}
         </Typography>
-        <Typography component="p">{impressions} active impressions</Typography>
+        <Typography component="p">
+          {impressions} {from}
+        </Typography>
       </Grid>
     </Grid>
   );

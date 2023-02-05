@@ -33,7 +33,7 @@ const navItems: Array<NavItemTypes> = [
   },
   {
     name: 'Settings',
-    link: '#',
+    link: '/settings',
     icon: Settings,
   },
   {
@@ -43,7 +43,7 @@ const navItems: Array<NavItemTypes> = [
   },
 ];
 
-const HorizontalNavList = () => {
+const NavbarList = () => {
   const router = useRouter();
 
   return (
@@ -67,4 +67,4 @@ const HorizontalNavList = () => {
   );
 };
 
-export default HorizontalNavList;
+export default NavbarList;

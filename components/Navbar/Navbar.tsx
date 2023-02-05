@@ -4,7 +4,7 @@ import Link from 'next/link';
 import PersonIcon from '@mui/icons-material/Person';
 import KinhubLogo from '../../public/images/kinhub-employers-nav-logo.svg';
 
-import HorizontalNavList from './HorizontalNavList';
+import NavbarList from './NavbarList';
 
 const Navbar = () => {
   return (
@@ -16,7 +16,7 @@ const Navbar = () => {
           </Link>
         </Box>
         <Box sx={{ flexGrow: 1 }}>
-          <HorizontalNavList />
+          <NavbarList />
         </Box>
         <Box component="div" className="flex items-center gap-3">
           <Typography component="p" className="text-white">

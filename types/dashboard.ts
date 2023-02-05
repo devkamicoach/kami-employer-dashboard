@@ -1,16 +1,10 @@
 import { ReactNode } from 'react';
 
-export type PulseTypes = {
-  icon: string;
-  title: string;
-  responses: string;
-  from: string;
-};
-
 export type TopicTypes = {
   icon: string;
   title: string;
   impressions: string;
+  from: string;
 };
 
 export type QuickInsightCardTypes = {

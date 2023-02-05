@@ -3,7 +3,6 @@ import Heading from 'components/PageComponents/Dashboard/Heading';
 import Messages from 'components/PageComponents/Dashboard/Messages';
 
 import { Box, Button, TextField, Typography } from '@mui/material';
-import PulseCheck from 'components/PulseCheck/PulseCheck';
 import TopTopics from 'components/TopTopics/TopTopics';
 import QuickReport from 'components/PageComponents/Dashboard/QuickReport';
 import PopularProgrammes from 'components/PageComponents/Dashboard/PopularProgrammes';
@@ -12,17 +11,11 @@ import KamiCard from 'components/Cards/KamiCard';
 import { useSidebar, SidebarProvider } from 'context/SidebarContext';
 import { FunctionComponent } from 'react';
 
-import type {
-  ProgrammeInsightCardTypes,
-  QuickInsightCardTypes,
-  PulseTypes,
-  TopicTypes,
-  KamiCardTypes,
-} from 'types/dashboard';
+import type { ProgrammeInsightCardTypes, QuickInsightCardTypes, TopicTypes, KamiCardTypes } from 'types/dashboard';
 
 type DashboardContentTypes = {
   messages: Array<any>;
-  pulses: Array<PulseTypes>;
+  pulses: Array<TopicTypes>;
   topics: Array<TopicTypes>;
   reports: Array<QuickInsightCardTypes>;
   insights: Array<ProgrammeInsightCardTypes>;
@@ -43,7 +36,7 @@ const DashboardContent: FunctionComponent<DashboardContentTypes> = ({
       <DashboardLayout
         heading={<Heading user="Joyce" />}
         messages={<Messages messages={messages} />}
-        pulses={<PulseCheck pulses={pulses} />}
+        pulses={<TopTopics topics={pulses} />}
         topics={<TopTopics topics={topics} />}
         report={<QuickReport reports={reports} />}
         programmes={<PopularProgrammes insights={insights} />}
@@ -126,19 +119,19 @@ function getData() {
     {
       icon: `${ICON_PATH}/pulse-logos/happy.svg`,
       title: '84 responses',
-      responses: '32',
+      impressions: '32',
       from: 'Commercials Team',
     },
     {
       icon: `${ICON_PATH}/pulse-logos/sad.svg`,
       title: '51 responses',
-      responses: '19',
+      impressions: '19',
       from: 'Engineering Team',
     },
     {
       icon: `${ICON_PATH}/pulse-logos/vhappy.svg`,
       title: '11 responses',
-      responses: '4',
+      impressions: '4',
       from: 'Design Team',
     },
   ];
@@ -148,16 +141,19 @@ function getData() {
       icon: `${ICON_PATH}/topic-logos/mental-wellness.svg`,
       title: 'Mental Wellness',
       impressions: '3,230',
+      from: 'active impressions',
     },
     {
       icon: `${ICON_PATH}/topic-logos/sleep.svg`,
       title: 'Sleep',
       impressions: '2,710',
+      from: 'active impressions',
     },
     {
       icon: `${ICON_PATH}/topic-logos/well-being.svg`,
       title: 'Well-being',
       impressions: '1,100',
+      from: 'active impressions',
     },
   ];
 
