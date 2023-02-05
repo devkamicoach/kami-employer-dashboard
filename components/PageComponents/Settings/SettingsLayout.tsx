@@ -10,7 +10,7 @@ type SettingsLayoutType = {
 
 const SettingsLayout: FunctionComponent<SettingsLayoutType> = ({ details, plans, seats, subscriptions }) => {
   return (
-    <Box className="flex mx-auto w-[60%]">
+    <Box className="flex mx-auto w-[70%]">
       <Grid container>
         <Grid item sm={12} className="py-5">
           <Grid container className="flex flex-row">

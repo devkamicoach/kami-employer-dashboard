@@ -6,10 +6,10 @@ import type { ProgrammeInsightCardTypes } from 'types/dashboard';
 
 const ProgrammeInsightsCard: FunctionComponent<ProgrammeInsightCardTypes> = ({ title, topics, rate }) => {
   return (
-    <Card className="max-w-[450px]">
+    <Card className="max-w-[400px]">
       <CardContent>
         <Box className="flex items-center gap-4">
-          <Box className="basis-3/4">
+          <Box>
             <Typography component="h3" className="font-body font-bold text-xl">
               {title}
             </Typography>

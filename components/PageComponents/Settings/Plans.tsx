@@ -17,7 +17,7 @@ const Plans: FunctionComponent<PlansType> = ({ name, plan, title, line1, line2, 
         Organisation Settings
       </Typography>
       <Grid container>
-        <Grid item className="grow">
+        <Grid item className="flex flex-col w-[50%]">
           <Grid container className="flex-col">
             <Grid item>
               <Box className="py-3">

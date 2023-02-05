@@ -1,36 +1,28 @@
-import { Grid, Typography } from "@mui/material"
-import { FunctionComponent } from "react";
-import { QuickInsightCardTypes } from "types/dashboard";
-import { InsightCardTypes } from "types/insights";
+import { Grid, Typography } from '@mui/material';
+import { FunctionComponent } from 'react';
+import { QuickInsightCardTypes } from 'types/dashboard';
 
-import InsightCard from "components/Cards/InsightCard";
-import QuickInsightCard from "components/Cards/QuickInsightCard";
+import QuickInsightCard from 'components/Cards/QuickInsightCard';
 
 type UserInsightsTypes = {
-  insights: Array<InsightCardTypes>
-  quickInsights: Array<QuickInsightCardTypes>
-}
+  quickInsights: Array<QuickInsightCardTypes>;
+};
 
-const UserInsights: FunctionComponent<UserInsightsTypes> = ({ insights, quickInsights }) => {
+const UserInsights: FunctionComponent<UserInsightsTypes> = ({ quickInsights }) => {
   return (
     <>
-      <Typography component="h2" className="font-body text-lg font-bold">USER INSIGHTS</Typography>
+      <Typography component="h2" className="font-body text-lg font-bold py-3">
+        Engagement Report
+      </Typography>
       <Grid className="gap-5 items-center" container>
-        {insights.map(({ rate, description }, index) =>
-        (
-          <Grid key={index} item>
-            <InsightCard rate={rate} description={description} />
-          </Grid>
-        ))}
-        {quickInsights.map(({ title, value, percentage }, index) =>
-        (
+        {quickInsights.map(({ title, value, percentage }, index) => (
           <Grid key={(index + 1) * 2} item>
             <QuickInsightCard title={title} value={value} percentage={percentage} />
           </Grid>
         ))}
       </Grid>
     </>
-  )
-}
+  );
+};
 
-export default UserInsights
+export default UserInsights;
