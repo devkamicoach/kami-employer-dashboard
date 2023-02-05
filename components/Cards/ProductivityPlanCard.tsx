@@ -1,7 +1,13 @@
 import { Box, Card, CardContent, Typography } from '@mui/material';
 import { FunctionComponent } from 'react';
 import Image from 'next/image';
-import { ProductivityPlanCardTypes } from 'types/settings';
+
+type ProductivityPlanCardTypes = {
+  title: string;
+  line1: string;
+  line2: string;
+  line3: string;
+};
 
 const ProductivityPlanCard: FunctionComponent<ProductivityPlanCardTypes> = ({ title, line1, line2, line3 }) => {
   const icon = '/images/tickmark.svg';
