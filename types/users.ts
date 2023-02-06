@@ -1,7 +1,9 @@
 export type UsersType = {
+  seat: string;
   name: string;
-  userId: string;
-  userType: string;
-  lastUpdated: string;
+  email: string;
+  department: string;
+  position: string;
+  date: string;
   groups: string;
 };

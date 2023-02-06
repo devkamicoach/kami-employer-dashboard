@@ -1,68 +1,107 @@
 import UsersLayout from 'components/PageComponents/Users/UsersLayout';
-import Groups from 'components/PageComponents/Users/Groups';
 import SearchBar from 'components/PageComponents/Users/SearchBar';
 import Table from 'components/PageComponents/Users/Table';
 
 const Users = () => {
-  const groups = [
-    { name: "Parents", number: 614 },
-    { name: "Careers", number: 124 },
-    { name: "Expecting", number: 12 },
-  ]
-
+  // const groups = [
+  //   { name: 'Parents', number: 614 },
+  //   { name: 'Careers', number: 124 },
+  //   { name: 'Expecting', number: 12 },
+  // ];
   const tableData = [
     {
-      name: "Victor Perez",
-      userId: "KH-0232",
-      userType: "Active",
-      lastUpdated: "5h ago",
-      groups: "Parent, Fathers, Probationary"
+      seat: '1',
+      name: 'Victor Perez',
+      email: 'vperez@gmail.com',
+      department: 'Design',
+      position: 'UX Designer',
+      groups: 'Parent, Fathers, Probationary',
+      date: 'Feb 6, 2023',
     },
     {
-      name: "Lena Page",
-      userId: "KH-0234",
-      userType: "Active",
-      lastUpdated: "3 days ago",
-      groups: "Parent, Mother"
+      seat: '1',
+      name: 'Victor Perez',
+      email: 'vperez@gmail.com',
+      department: 'Design',
+      position: 'UX Designer',
+      groups: 'Parent, Fathers, Probationary',
+      date: 'Feb 6, 2023',
     },
     {
-      name: "Jane Doe",
-      userId: "KH-0234",
-      userType: "Dormant",
-      lastUpdated: "16 days ago",
-      groups: "Expecting"
+      seat: '1',
+      name: 'Victor Perez',
+      email: 'vperez@gmail.com',
+      department: 'Design',
+      position: 'UX Designer',
+      groups: 'Parent, Fathers, Probationary',
+      date: 'Feb 6, 2023',
     },
     {
-      name: "Rena Paul",
-      userId: "KH-0235",
-      userType: "Power User",
-      lastUpdated: "2h ago",
-      groups: "Probationary"
+      seat: '1',
+      name: 'Victor Perez',
+      email: 'vperez@gmail.com',
+      department: 'Design',
+      position: 'UX Designer',
+      groups: 'Parent, Fathers, Probationary',
+      date: 'Feb 6, 2023',
     },
     {
-      name: "John Snow",
-      userId: "KH-0235",
-      userType: "Power User",
-      lastUpdated: "2h ago",
-      groups: "Veteran"
+      seat: '1',
+      name: 'Victor Perez',
+      email: 'vperez@gmail.com',
+      department: 'Design',
+      position: 'UX Designer',
+      groups: 'Parent, Fathers, Probationary',
+      date: 'Feb 6, 2023',
     },
     {
-      name: "John Snow",
-      userId: "KH-0235",
-      userType: "Power User",
-      lastUpdated: "2h ago",
-      groups: "Veteran"
+      seat: '1',
+      name: 'Victor Perez',
+      email: 'vperez@gmail.com',
+      department: 'Design',
+      position: 'UX Designer',
+      groups: 'Parent, Fathers, Probationary',
+      date: 'Feb 6, 2023',
     },
     {
-      name: "John Snow",
-      userId: "KH-0235",
-      userType: "Power User",
-      lastUpdated: "2h ago",
-      groups: "Veteran"
-    }
-  ]
+      seat: '1',
+      name: 'Victor Perez',
+      email: 'vperez@gmail.com',
+      department: 'Design',
+      position: 'UX Designer',
+      groups: 'Parent, Fathers, Probationary',
+      date: 'Feb 6, 2023',
+    },
+    {
+      seat: '1',
+      name: 'Victor Perez',
+      email: 'vperez@gmail.com',
+      department: 'Design',
+      position: 'UX Designer',
+      groups: 'Parent, Fathers, Probationary',
+      date: 'Feb 6, 2023',
+    },
+    {
+      seat: '1',
+      name: 'Victor Perez',
+      email: 'vperez@gmail.com',
+      department: 'Design',
+      position: 'UX Designer',
+      groups: 'Parent, Fathers, Probationary',
+      date: 'Feb 6, 2023',
+    },
+    {
+      seat: '1',
+      name: 'Victor Perez',
+      email: 'vperez@gmail.com',
+      department: 'Design',
+      position: 'UX Designer',
+      groups: 'Parent, Fathers, Probationary',
+      date: 'Feb 6, 2023',
+    },
+  ];
 
-  return <UsersLayout search={<SearchBar />} groups={<Groups groupList={groups} />} table={<Table data={tableData} />} />;
+  return <UsersLayout search={<SearchBar />} table={<Table data={tableData} />} />;
 };
 
 export default Users;

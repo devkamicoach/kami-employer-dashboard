@@ -1,18 +1,17 @@
-import { Add } from "@mui/icons-material";
-import { Box, Card, CardContent, Typography } from "@mui/material"
-import { FunctionComponent } from "react";
+import { Add } from '@mui/icons-material';
+import { Box, Card, CardContent, Typography } from '@mui/material';
+import { FunctionComponent } from 'react';
 
 type GroupsType = {
   groupList: Array<{
     name: string;
     number: number;
   }>;
-}
+};
 
 const Groups: FunctionComponent<GroupsType> = ({ groupList }) => {
   return (
     <Box className="my-5">
-      <Typography className="h3">Your groups</Typography>
       <Box className="flex gap-3">
         {groupList.map(({ name, number }, index) => (
           <Card className="basis-full max-w-[250px]" key={index}>
@@ -20,7 +19,8 @@ const Groups: FunctionComponent<GroupsType> = ({ groupList }) => {
               <Typography className="mb-3">{name}</Typography>
               <Typography className="text-2xl font-bold text-kami-blue">{number}</Typography>
             </CardContent>
-          </Card>))}
+          </Card>
+        ))}
         <Card className="basis-full max-w-[250px] bg-[#F2EFEB]">
           <CardContent className="flex flex-col justify-center items-center h-full p-0">
             <Add className="text-[#666665]" />
@@ -29,7 +29,7 @@ const Groups: FunctionComponent<GroupsType> = ({ groupList }) => {
         </Card>
       </Box>
     </Box>
-  )
-}
+  );
+};
 
-export default Groups
+export default Groups;
