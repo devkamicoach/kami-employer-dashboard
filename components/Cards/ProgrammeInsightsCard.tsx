@@ -6,14 +6,14 @@ import type { ProgrammeInsightCardTypes } from 'types/dashboard';
 
 const ProgrammeInsightsCard: FunctionComponent<ProgrammeInsightCardTypes> = ({ title, topics, rate }) => {
   return (
-    <Card className="max-w-[400px]">
+    <Card className="max-w-[400px] h-full flex items-center">
       <CardContent>
         <Box className="flex items-center gap-4">
           <Box>
-            <Typography component="h3" className="font-body font-bold text-xl">
+            <Typography component="h4" className="font-body font-bold text-lg">
               {title}
             </Typography>
-            <Box className="flex flex-wrap gap-4 mt-5">
+            <Box className="flex flex-wrap gap-2 mt-5">
               {topics.map((topic, index) => (
                 <Chip key={index} title={topic} />
               ))}

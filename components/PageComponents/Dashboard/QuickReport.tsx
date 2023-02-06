@@ -13,9 +13,9 @@ const QuickReport: FunctionComponent<QuickReportType> = ({ reports }) => {
       <Typography component="h2" className="font-body mb-3 uppercase font-bold">
         Quick Report
       </Typography>
-      <Grid container className="gap-0 justify-between">
+      <Grid container className="gap-2 justify-between">
         {reports.map(({ title, value, percentage }, index) => (
-          <Grid item key={index} sm={3}>
+          <Grid item key={index} sm={2.8}>
             <QuickInsightCard title={title} value={value} percentage={percentage} />
           </Grid>
         ))}

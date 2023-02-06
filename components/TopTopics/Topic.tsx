@@ -5,7 +5,7 @@ import type { TopicTypes } from 'types/dashboard';
 
 const Topic: FunctionComponent<TopicTypes> = ({ icon, title, impressions, from }) => {
   return (
-    <Grid container className="items-center gap-2">
+    <Grid className="flex items-center gap-2">
       <Grid item>
         <Box width={50} height={50} className="bg-gray-100 rounded-full flex items-center justify-center relative">
           <Image src={icon} alt="Icon" width={25} height={25} />

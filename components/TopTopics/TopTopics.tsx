@@ -15,7 +15,7 @@ const TopTopics: FunctionComponent<TopTopicsTypes> = ({ topics }) => {
       </Typography>
       <Grid container className="justify-between">
         {topics.map(({ icon, title, impressions, from }, index) => (
-          <Grid key={index} item sm={3}>
+          <Grid key={index} item sm={4}>
             <Topic icon={icon} title={title} impressions={impressions} from={from} />
           </Grid>
         ))}
