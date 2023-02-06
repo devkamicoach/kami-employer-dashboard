@@ -53,8 +53,8 @@ const NavbarList = () => {
         return (
           <Link key={name} href={link}>
             <a>
-              <ListItem className={cn('items-center rounded-full px-5', active ? 'bg-white' : '')}>
-                <ListItemIcon className={cn('min-w-[30px]', active ? 'text-kami-blue' : 'text-white')}>
+              <ListItem className={cn('flex items-center rounded-full px-5', active ? 'bg-white' : '')}>
+                <ListItemIcon className={cn('min-w-[30px] h-[22px]', active ? 'text-kami-blue' : 'text-white')}>
                   {createElement(icon, { fill: active ? '#284F73' : undefined })}
                 </ListItemIcon>
                 <Typography className={cn('', active ? 'font-bold text-kami-blue' : 'text-white')}>{name}</Typography>
