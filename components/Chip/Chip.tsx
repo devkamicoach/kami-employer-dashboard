@@ -5,6 +5,7 @@ import cn from 'classnames';
 type ColorsType = {
   blue: string;
   green: string;
+  gray: string;
 };
 
 type ChipTypes = {
@@ -12,18 +13,20 @@ type ChipTypes = {
   color?: keyof ColorsType;
 };
 
-const Chip: FunctionComponent<ChipTypes> = ({ title, color = 'blue' }) => {
+const Chip: FunctionComponent<ChipTypes> = ({ title, color = 'gray' }) => {
   const bgColors: ColorsType = {
     blue: 'bg-[#3590F3]',
     green: 'bg-[#64BA91]',
+    gray: 'bg-[#F2EFEB]',
   };
   const textColors: ColorsType = {
     blue: 'text-[#3590F3]',
     green: 'text-[#64BA91]',
+    gray: 'text-[#7A7A7A]',
   };
 
   return (
-    <Box className={cn('bg-opacity-10 p-2 rounded-md', bgColors[color])}>
+    <Box className={cn('px-3 py-2 rounded-full', bgColors[color])}>
       <Typography className={cn('text-sm text-center', textColors[color])}>{title}</Typography>
     </Box>
   );

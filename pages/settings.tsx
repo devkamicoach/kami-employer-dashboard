@@ -19,11 +19,11 @@ const Settings = () => {
     },
     {
       label: 'Industry',
-      input: 'Optimum Health',
+      input: 'Health',
     },
     {
       label: 'Role',
-      input: 'Optimum Health',
+      input: 'HR Manager',
     },
   ];
 

@@ -47,11 +47,11 @@ const Engagements: FunctionComponent<EngagementsType> = ({ teams }) => {
       <Typography component="h2" className="font-heading text-2xl font-bold">
         Insights
       </Typography>
-      <Grid className="gap-9" container>
-        <Grid sm={7} item>
+      <Grid className="flex justify-between" container>
+        <Grid sm={9} item>
           <Bar options={options} data={data} />
         </Grid>
-        <Grid sm={4} item>
+        <Grid sm={2.5} item>
           <Typography component="h2" className="font-body text-lg font-bold">
             User Engagement
           </Typography>

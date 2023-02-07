@@ -15,7 +15,7 @@ const Subscriptions = () => {
       </Grid>
       <Grid item className="flex flex-row py-5">
         {topics.map((topic, index) => (
-          <Box key={index} className="px-1">
+          <Box key={index} className="pr-2">
             <Chip key={index} title={topic} />
           </Box>
         ))}

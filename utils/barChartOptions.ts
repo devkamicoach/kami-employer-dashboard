@@ -23,6 +23,9 @@ const initBarChart = (title: string, customOptions?: any | null) => {
       },
       yAxis: {
         max: 1,
+        ticks:{
+          display: false,
+        }
       },
     },
     ...customOptions,

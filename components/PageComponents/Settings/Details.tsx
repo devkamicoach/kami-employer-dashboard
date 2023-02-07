@@ -29,7 +29,7 @@ const Details: FunctionComponent<DetailsType> = ({ details }) => {
                 {label}
               </Typography>
               <TextField
-                className=" bg-white"
+                className="bg-white mx-0"
                 variant="outlined"
                 InputProps={{
                   readOnly: true,

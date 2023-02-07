@@ -153,3 +153,7 @@ p,
 a {
   color: theme(colors.kami-text);
 }
+
+.width-zero {
+  width: 0px !important;
+}

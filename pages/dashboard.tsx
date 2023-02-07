@@ -1,6 +1,7 @@
 import DashboardLayout from 'components/PageComponents/Dashboard/DashboardLayout';
 import Heading from 'components/PageComponents/Dashboard/Heading';
 import Messages from 'components/PageComponents/Dashboard/Messages';
+import BasicModal from 'components/PageComponents/Modal/Modal';
 
 import { Box, Button, TextField, Typography } from '@mui/material';
 import TopTopics from 'components/TopTopics/TopTopics';
@@ -97,21 +98,13 @@ function getData() {
       heading: 'Send a public announcement',
       message:
         'Send a company wide announcement or quick pulse check with a custom message to all your employees on Kinhub',
-      actionButton: (
-        <Button variant="contained" className="normal-case bg-kami-gray w-full hover:bg-gray-500">
-          Send an announcement
-        </Button>
-      ),
+      actionButton: <BasicModal button="Send an announcement" />,
     },
     {
       icon: '/images/announcement-icon.svg',
       heading: 'Send a private check-in',
       message: 'Send a private announcement or check-in to individual or specific employees on Kinhub',
-      actionButton: (
-        <Button variant="contained" className="normal-case bg-kami-gray w-full hover:bg-gray-500">
-          Send a private check-in
-        </Button>
-      ),
+      actionButton: <BasicModal button="Send a private check-in" />,
     },
   ];
 

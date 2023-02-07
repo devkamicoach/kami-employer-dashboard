@@ -12,7 +12,11 @@ type PopupSidebarTypes = {
 
 const PopupSidebar: FunctionComponent<PopupSidebarTypes> = ({ heading, content, open }) => {
   const dispatch = useSidebarDispatch();
-
+  const close = () => {
+    console.log('change width');
+    const drawer = document.querySelector('.MuiDrawer-root');
+    drawer?.classList.add('width-zero');
+  };
   return (
     <Drawer
       variant="persistent"
@@ -32,7 +36,12 @@ const PopupSidebar: FunctionComponent<PopupSidebarTypes> = ({ heading, content, 
       }}
     >
       <Box className="self-end">
-        <button onClick={() => dispatch({ type: 'close' })}>
+        <button
+          onClick={() => {
+            dispatch({ type: 'close' });
+            close();
+          }}
+        >
           <ClearIcon />
         </button>
       </Box>
