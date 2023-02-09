@@ -20,7 +20,7 @@ const DashboardLayout: FunctionComponent<DashboardLayoutTypes> = ({
 }) => {
   return (
     <Grid container className="flex mx-auto w-[60%]">
-      <Grid item sm={12} className="py-7">
+      <Grid item sm={12} className="py-3">
         {heading}
       </Grid>
       <Grid item sm={12} className="py-7">

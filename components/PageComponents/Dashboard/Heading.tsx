@@ -21,19 +21,24 @@ const Heading: FunctionComponent<HeadingTypes> = ({ user }) => {
       <Typography component="h1" className="text-2xl">
         Welcome back, {user}!
       </Typography>
-      <button
-        id="btn-open-onboarding"
-        onClick={() => {
-          dispatch({ type: 'open' });
-          open();
-        }}
-      >
-        Onboarding
-      </button>
-      {/* <Typography>
-        This is your official Employer dashboard, where you are provided administration access and user insights for
-        your partnership with Kami. We&apos;re looking forward to hearing your feedback.
-      </Typography> */}
+      <Box className="flex flex-row gap-4 py-2">
+        <button
+          id="btn-onboarding"
+          className="bg-kami-green rounded-full font-body text-white px-3 py-2"
+          onClick={() => {
+            dispatch({ type: 'open' });
+            open();
+          }}
+        >
+          🚀 Onboarding
+        </button>
+        <Box>
+          <Typography component="h3" className="font-body text-kami-blue font-bold">
+            Complete your onboarding checklist!
+          </Typography>
+          <Typography component="p">2/4 items completed!</Typography>
+        </Box>
+      </Box>
     </Box>
   );
 };
