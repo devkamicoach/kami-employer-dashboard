@@ -4,7 +4,7 @@ import Link from 'next/link';
 import PersonIcon from '@mui/icons-material/Person';
 import KinhubLogo from '../../public/images/kinhub-employers-nav-logo.svg';
 
-import NavbarList from './NavbarList';
+// import NavbarList from './NavbarList';
 
 const Navbar = () => {
   return (
@@ -15,9 +15,7 @@ const Navbar = () => {
             <Image className="hover:cursor-pointer" src={KinhubLogo} alt="Kami logo" width="100%" />
           </Link>
         </Box>
-        <Box sx={{ flexGrow: 1 }}>
-          <NavbarList />
-        </Box>
+        <Box sx={{ flexGrow: 1 }}>{/* <NavbarList /> */}</Box>
         <Box component="div" className="flex items-center gap-3">
           <Typography component="p" className="text-white">
             Joyce, Optimum Health
