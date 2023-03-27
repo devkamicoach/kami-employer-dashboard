@@ -49,7 +49,10 @@ const Home = () => {
     return null;
   };
   return (
-    <Grid container className="flex mx-auto w-[50%] ">
+    <Grid
+      container
+      className="container mx-auto justify-center bg-kami-white px-3 md:px-[5rem] md:pt-16 lg:px-[10rem] max-w-[1080px]"
+    >
       <Grid item sm={12}>
         <h1 className="text-[28px] mb-3 mt-10">Give users access to Kinhub </h1>
       </Grid>
